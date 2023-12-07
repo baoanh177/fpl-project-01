@@ -45,7 +45,7 @@ function build_filter_product($category_id=null,$price = null,$colors=null,$size
         $sql.="AND products.category_id = $category_id ";
     }
 
-    $arrPrice = ["NONE","BETWEEN 0 AND 100000","BETWEEN 101000 AND 200000", "BETWEEN 201000 AND 300000","BETWEEN 301000 AND 500000","> 500000"];
+    $arrPrice = ["NONE","BETWEEN 0 AND 1000000","BETWEEN 1001000 AND 2000000", "BETWEEN 2001000 AND 3000000","BETWEEN 3001000 AND 5000000","> 5001000"];
     if($price > 0){
         $sql .= "AND products.price ".$arrPrice[$price]." ";
     }

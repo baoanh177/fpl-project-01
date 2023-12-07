@@ -113,7 +113,7 @@
                         insert_detail_order($order_id, $variant['id'], $product['price'], $value['quantity'], 0, $total_price);
                     }
                     $_SESSION['cart'] = [];
-                    header("Location: index.php?act=checkout&status=success");
+                    header("Location: index.php?act=order_history&status=success");
                 }
                 break;
             case "order_history":

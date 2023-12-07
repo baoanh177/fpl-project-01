@@ -1,10 +1,4 @@
-<?php 
-    if(isset($_GET['status'])) {
-        if($_GET['status'] == 'success') {
-            include "./pages/checkout/success_modal.php";
-        }
-    }
-?>
+
 
 <!-- Checkout Start -->
 <div class="container-fluid pt-5">
@@ -80,7 +74,7 @@
                     </div>
                 </div>
                 <div class="card-footer border-secondary bg-transparent">
-                    <button name="pay-btn" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán</button>
+                    <button name="pay-btn" <?=count($_SESSION['cart']) > 0 ? '': 'disabled'?> class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán</button>
                 </div>
             </div>
         </div>

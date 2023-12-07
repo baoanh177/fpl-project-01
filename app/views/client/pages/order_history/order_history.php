@@ -1,3 +1,11 @@
+
+<?php 
+    if(isset($_GET['status'])) {
+        if($_GET['status'] == 'success') {
+            include "./pages/order_history/success_modal.php";
+        }
+    }
+?>
 <div class="container">
     <h2>Lịch sử đặt hàng</h2>
     <table class="table table-bordered">
