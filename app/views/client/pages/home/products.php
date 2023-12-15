@@ -7,7 +7,7 @@
         </div>
         <div class="row px-xl-5 pb-3">
             <?php 
-                $variants = query_many("variants", "status = 1 group by product_id, color_id LIMIT 12");
+                $variants = query_many("variants", "status = 1 group by product_id, color_id order by id desc LIMIT 8");
                 foreach($variants as $variant) {
                     extract($variant);
                     $product = query_one("products", $product_id);

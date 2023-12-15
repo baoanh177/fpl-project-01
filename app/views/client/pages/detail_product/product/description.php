@@ -2,7 +2,8 @@
     <div class="col">
         <div class="nav nav-tabs justify-content-center border-secondary mb-4">
             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
-            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+            <?php $comments = query_all("comments"); ?>
+            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (<?=count($comments)?>)</a>
         </div>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="tab-pane-1">
@@ -12,21 +13,18 @@
             <div class="tab-pane fade" id="tab-pane-3">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="mb-4">1 review for "Colorful Stylish Shirt"</h4>
-                        <div class="media mb-4">
-                            <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                            <div class="media-body">
-                                <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
-                                <div class="text-primary mb-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <i class="far fa-star"></i>
+                        <?php 
+                            foreach($comments as $comment) {
+                                extract($comment);
+                                $user = query_one("users", $user_id);
+                        ?>
+                            <div class="media mb-4">
+                                <div class="media-body">
+                                    <h6><?=$user['display_name']?><small> - <i><?=$date?></i></small></h6>
+                                    <p><?=$content?></p>
                                 </div>
-                                <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <div class="col-md-6">
                         <h4 class="mb-4">Leave a review</h4>

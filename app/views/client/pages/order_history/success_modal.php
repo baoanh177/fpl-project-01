@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Đặt hàng thành công!
+        Hủy đơn hàng thành công!
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

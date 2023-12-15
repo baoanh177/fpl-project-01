@@ -81,7 +81,7 @@ function build_filter_product($category_id=null,$price = null,$colors=null,$size
         $sql .= "$sqlSize )";
     }
 
-    $sql.="GROUP BY product_id, color_id LIMIT 12";
+    $sql.="GROUP BY product_id, color_id";
     // echo $sql;
     return pdo_query($sql);
 }

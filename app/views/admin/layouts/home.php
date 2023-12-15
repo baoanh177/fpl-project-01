@@ -90,4 +90,3 @@
 </section>
 <!-- /.content -->
 
-<?php include "./pages/charts/charts.php"; ?>

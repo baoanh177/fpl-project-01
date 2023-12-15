@@ -71,7 +71,7 @@
                         <h5 class="font-weight-bold">Tổng thanh toán</h5>
                         <h5 class="font-weight-bold js-total-bill">0đ</h5>
                     </div>
-                    <a href="index.php?act=checkout" class="btn btn-block btn-primary my-3 py-3">Thanh toán</a>
+                    <a href="index.php?act=checkout" class="btn btn-block btn-primary my-3 py-3">Checkout</a>
                 </div>
             </div>
             <script>
